@@ -1,0 +1,19 @@
+<table border="1">
+  <caption>
+    My todos List
+  </caption>
+  <thead>
+    <tr>
+      <th>description</th>
+      <th>target date</th>
+      <th>is it done ?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.description }}</td>
+      <td>{{ todo.targetDate | date }}</td>
+      <td>{{ todo.isDone }}</td>
+    </tr>
+  </tbody>
+</table>
