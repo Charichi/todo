@@ -6,15 +6,19 @@
       >
     </div>
     <ul class="navbar-nav">
-      <li><a href="welcome/Brandero" class="nav-link">Home</a></li>
-      <li><a href="todos" class="nav-link">Todos</a></li>
+      <li *ngIf="hardcodedAuth.isUserLoggedIn()">
+        <a routerLink="/welcome/Brandero" class="nav-link">Home</a>
+      </li>
+      <li *ngIf="hardcodedAuth.isUserLoggedIn()">
+        <a routerLink="/todos" class="nav-link">Todos</a>
+      </li>
     </ul>
     <ul class="navbar-nav navbar-collapse justify-content-end">
-      <li>
-        <a routerLink="login" class="nav-link">Login</a>
+      <li *ngIf="!hardcodedAuth.isUserLoggedIn()">
+        <a routerLink="/login" class="nav-link">Login</a>
       </li>
-      <li class="nav-link">
-        <a routerLink="" class="nav-link">Logout</a>
+      <li *ngIf="hardcodedAuth.isUserLoggedIn()">
+        <a routerLink="/logout" class="nav-link">Logout</a>
       </li>
     </ul>
   </nav>
