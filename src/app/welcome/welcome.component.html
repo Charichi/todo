@@ -1,5 +1,26 @@
+<div class="container alert alert-danger" *ngIf="error">
+  <strong>{{ error }}</strong>
+</div>
 <h2>Welcome !</h2>
 <div class="container">
   welcome to the application {{ username }}, manage your todos
   <a routerLink="/todos">here</a>
+</div>
+<div class="container">
+  click here for a message
+  <button (click)="helloWorldMessage()" class="btn btn-success">
+    click here
+  </button>
+  <div class="container" *ngIf="message">
+    <strong>{{ message }}</strong>
+  </div>
+</div>
+<div class="container">
+  Enter your word: <input type="text" name="word" [(ngModel)]="word" />
+  <button (click)="helloWorldMessageWithV()" class="btn btn-success">
+    click here
+  </button>
+  <div class="container" *ngIf="messageV">
+    <strong>{{ messageV }}</strong>
+  </div>
 </div>
