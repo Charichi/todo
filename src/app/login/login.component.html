@@ -1,11 +1,28 @@
 <h2>Login !</h2>
 <div>
   <div class="alert alert-warning" *ngIf="invalid">{{ errorMessage }}</div>
-  <div>
-    <label for="username">Username: </label>
-    <input type="text" name="username" [(ngModel)]="username" /> Password:
-    <label for="password">Password: </label>
-    <input type="password" name="password" [(ngModel)]="password" />
-    <button class="btn btn-success" (click)="showUsername()">Login</button>
+  <div class="container">
+    <form (ngSubmit)="showUsername()">
+      <div class="form-group">
+        <label for="username">Username: </label>
+        <input
+          class="form-control"
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+        />
+      </div>
+
+      <button class="btn btn-success" type="submit">Login</button>
+    </form>
   </div>
 </div>
